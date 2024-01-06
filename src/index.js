@@ -1,6 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
+import { library } from '@fortawesome/fontawesome-svg-core';
+import { faEnvelope} from '@fortawesome/free-regular-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import App from './App';
+
+library.add(faEnvelope);
+
+
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
