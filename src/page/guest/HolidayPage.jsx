@@ -52,27 +52,19 @@ const HolidayPage = () => {
                         <td className="line-1">Tranche A, moins de 1800 € brut</td>
                         <td className="line-1">75 %</td>
                         <td className="line-1">25 %</td>
-                        <Link to={`/holidaycreatepage`}>
-                        <button>Envoyer une demande</button>
-                        </Link>
                     </tr>
                     <tr>
                         <td className="line-2">Tranche B, de 1801 € à 2700 € brut</td>
                         <td className="line-2">50%</td>
                         <td className="line-2">50%</td>
-                        <Link to={`/holidaycreatepage`}>
-                        <button>Envoyer une demande</button>
-                        </Link>
                     </tr>
                     <tr>
                         <td className="line-3">Tranche C, plus de 2701 € brut</td>
                         <td className="line-3">25%</td>
                         <td className="line-3">75%</td>
-                        <Link to={`/holidaycreatepage`}>
-                        <button>Envoyer une demande</button>
-                        </Link>
                     </tr>
                 </table>
+                <Link to={`/holidaycreatepage`}><button>Envoyer une demande</button></Link>
                 </div>
             </section>
         </main>

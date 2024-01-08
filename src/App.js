@@ -8,6 +8,7 @@ import HolidayCreatePage from './page/guest/HolidayCreatePage';
 import ContactPage from './page/guest/ContactPage';
 import DashboardPage from "./page/admin/DashboardPage";
 import AdminUsersPage from './page/admin/AdminUsersPage';
+import AdminRequestsPage from './page/admin/AdminRequestsPage';
 
 
 function App() {
@@ -24,6 +25,7 @@ function App() {
 
         <Route path="/admin" element={<DashboardPage />}/>
         <Route path="/admin/users" element= {<AdminUsersPage />} />
+        <Route path="/admin/requests" element= {<AdminRequestsPage />} />
       </Routes>
     </BrowserRouter>
   );

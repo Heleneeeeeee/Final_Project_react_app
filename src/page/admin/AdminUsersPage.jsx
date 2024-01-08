@@ -36,27 +36,41 @@ const AdminUsersPage = () => {
       const usersResponseData = await usersResponse.json();
       setUsers(usersResponseData);
     };
+    console.log(users)
     return (
         <>
             <HeaderAdmin/>
             <h2>Liste des utilisateurs</h2>
-            {users?(
-                <>
-                    {users.map((user) => {
-                        return (
-                            <article>
-                                 <h2>{user.username}</h2>
-                                    {decodedToken.data.role !== 3 && (
-                                    <button onClick={(event) => handleDeleteUser(event, user.id)}>Supprimer</button>
-                                )}
-                            </article>
-                        );
-                    }
-                    )}
-                </>
-            ): (
-                <p>En cours de chargement</p>
-            )}
+              {users ? (
+                  <table>
+                      <thead>
+                          <tr>
+                              <th>Nom</th>
+                              <th>Prénom</th>
+                              <th>Identifiant</th>
+                              <th>Email</th>
+                              {decodedToken.data.role !== 3 && <th>Action</th>}
+                          </tr>
+                      </thead>
+                      <tbody>
+                          {users.map((user) => (
+                              <tr key={user.id}>
+                                  <td>{user.lastname}</td>
+                                  <td>{user.firstname}</td>
+                                  <td>{user.username}</td>
+                                  <td>{user.email}</td>
+                                  {decodedToken.data.role !== 2 && (
+                                      <td>
+                                          <button onClick={(event) => handleDeleteUser(event, user.id)}>Supprimer</button>
+                                      </td>
+                                  )}
+                              </tr>
+                          ))}
+                      </tbody>
+                  </table>
+              ) : (
+                  <p>En cours de chargement</p>
+              )}
         </>
     ) 
 }
