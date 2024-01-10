@@ -31,7 +31,7 @@ const AdminUsersPage = () => {
         method: "DELETE",
         headers: { Authorization: "Bearer " + token },
       });
-  
+      
       const usersResponse = await fetch("http://localhost:3005/api/users");
       const usersResponseData = await usersResponse.json();
       setUsers(usersResponseData);
@@ -49,7 +49,7 @@ const AdminUsersPage = () => {
                               <th>Prénom</th>
                               <th>Identifiant</th>
                               <th>Email</th>
-                              {decodedToken.data.role !== 3 && <th>Action</th>}
+                              {decodedToken.data.role !== 2 && <th>Action</th>}
                           </tr>
                       </thead>
                       <tbody>

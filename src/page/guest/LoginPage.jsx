@@ -47,7 +47,7 @@ const LoginPage = () => {
     localStorage.setItem("jwt", token);
     
     setmessage("Vous êtes bien connecté")
-    navigate("/admin/");
+    navigate("/contact");
   }else{ 
     setmessage("Erreur lors de la connexion")
 

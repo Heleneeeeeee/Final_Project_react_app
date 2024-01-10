@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 
-const HolidayCreatePage = () => {
+const RentalCreatePage = () => {
     const navigate = useNavigate();
     const [message, setMessage] = useState(null);
 
@@ -13,32 +13,32 @@ const HolidayCreatePage = () => {
         }
     }, []); 
 
-    const handleHolidaysVoucherCreate = async (event) => {
+    const handleRentalCreate = async (event) => {
         event.preventDefault();
 
         const paymentMethod = event.target.paymentMethod.value;
         const amount = event.target.amount.value;
 
-        const holidaysVoucherToCreate = {
+        const rentalToCreate = {
             paymentMethod: paymentMethod,
             amount: amount,
         };
 
-        const holidaysVoucherToCreateJson = JSON.stringify(holidaysVoucherToCreate);
+        const rentalToCreateJson = JSON.stringify(rentalToCreate);
 
         const token = localStorage.getItem("jwt");
 
-        const holidaysVoucherToCreateResponse = await fetch('http://localhost:3005/api/holidays', {
+        const rentalToCreateResponse = await fetch('http://localhost:3005/api/rentals', {
             method: "POST",
             headers: {
                 "Content-Type": "application/json", 
                 Authorization: "Bearer " + token,
             },
-            body: holidaysVoucherToCreateJson,
+            body: rentalToCreateJson,
         });
 
-        if (holidaysVoucherToCreateResponse.status === 201) {
-            setMessage('Le Chèques vacances a bien été créé');
+        if (rentalToCreateResponse.status === 201) {
+            setMessage('La location a bien été créé');
         } else {
             setMessage('Erreur!');
         }
@@ -47,7 +47,7 @@ const HolidayCreatePage = () => {
     return (
         <>
             {message && <p>{message}</p>}
-            <form onSubmit={handleHolidaysVoucherCreate}>
+            <form onSubmit={handleRentalCreate}>
                 <div>
                     <label>Paiement en :</label>
                     <select id="choix" name="paymentMethod">
@@ -65,4 +65,4 @@ const HolidayCreatePage = () => {
     );
 };
 
-export default HolidayCreatePage;
+export default RentalCreatePage;

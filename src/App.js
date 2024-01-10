@@ -9,6 +9,8 @@ import ContactPage from './page/guest/ContactPage';
 import DashboardPage from "./page/admin/DashboardPage";
 import AdminUsersPage from './page/admin/AdminUsersPage';
 import AdminRequestsPage from './page/admin/AdminRequestsPage';
+import RentalCreatePage from './page/guest/RentalCreatePage';
+import LeisureCreatePage from './page/guest/LeisureCreatePage';
 
 
 function App() {
@@ -18,9 +20,11 @@ function App() {
         <Route path="/" element={<LoginPage />} />
         <Route path="/inscription" element={<RegistrationPage />} />
         <Route path="/holiday" element={<HolidayPage />} />
+        <Route path="/holidaycreatepage" element={<HolidayCreatePage />} />
+        <Route path="/rentalcreatepage" element={<RentalCreatePage />} />
         <Route path="/rental" element={<RentalPage />} />
         <Route path="/leisure" element={<LeisurePage />} />
-        <Route path="/holidaycreatepage" element={<HolidayCreatePage />} />
+        <Route path="/leisurecreatepage" element={<LeisureCreatePage />} />
         <Route path="/contact" element={<ContactPage />} />
 
         <Route path="/admin" element={<DashboardPage />}/>

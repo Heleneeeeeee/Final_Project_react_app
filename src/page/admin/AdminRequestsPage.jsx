@@ -34,67 +34,57 @@ const AdminRequestsPage = () => {
   
       const requestsResponse = await fetch("http://localhost:3005/api/requests");
         const requestsResponseData = await requestsResponse.json();
-        setRequests(requestsResponseData.data);
+        setRequests(requestsResponseData);
     };
-    console.log(requests)
+    
     return (
-        <>
-            <HeaderAdmin/>
-            <h2>Liste des demandes</h2>
+      <>
+          <HeaderAdmin />
+          
               {requests ? (
-                  <table>
-                      <thead>
-                          <tr>
-                              <th>Nom</th>
-                              <th>Prénom</th>
-                              <th>Demande</th>
-                              <th>Activités Sociales</th>
-                              <th>Montant</th>
-                              <th>Mode de Paiement</th>
-                              <th>Numéro de Chèque</th>
-                              {decodedToken.data.role !== 3 && <th>Action</th>}
-                          </tr>
-                      </thead>
-                      <tbody>
-                          {requests.map((request) => (
-                              <tr key={request.id}>
-                                  <td>{request.User.firstname}</td>
-                                  <td>{request.User.lastname}</td>
-                                  <td>{request.status}</td>
-                                  <td>
-                                    {request.Rental && request.Rental.name ? request.Rental.name : ""}
-                                    {request.HolidaysVoucher && request.HolidaysVoucher.name ? request.HolidaysVoucher.name : ""}
-                                    {request.Leisure && request.Leisure.name ? request.Leisure.name : ""}
-                                  </td>
-                                  <td>
-                                    {request.Rental && request.Rental.amount ? request.Rental.amount : ""}
-                                    {request.HolidaysVoucher && request.HolidaysVoucher.amount ? request.HolidaysVoucher.amount : ""}
-                                    {request.Leisure && request.Leisure.amount ? request.Leisure.amount : ""}
-                                  </td>
-                                  <td>
-                                    {request.Rental && request.Rental.paymentMethod ? `${request.Rental.paymentMethod} fois` : ""} 
-                                    {request.HolidaysVoucher && request.HolidaysVoucher.paymentMethod ? `${request.HolidaysVoucher.paymentMethod} fois` : ""}
-                                    {request.Leisure && request.Leisure.paymentMethod ? `${request.Leisure.paymentMethod} fois` : ""}
-                                  </td>
-                                  <td>
-                                    {request.Rental && request.Rental.checkNumber ? request.Rental.checkNumber : ""}
-                                    {request.HolidaysVoucher && request.HolidaysVoucher.checkNumber ? request.HolidaysVoucher.checkNumber : ""}
-                                    {request.Leisure && request.Leisure.checkNumber ? request.Leisure.checkNumber : ""}
-                                  </td>
-                                  {decodedToken.data.role !== 2 && (
-                                      <td>
-                                          <button onClick={(event) => handleDeleteRequest(event, request.id)}>Supprimer</button>
-                                      </td>
-                                  )}
-                              </tr>
-                          ))}
-                      </tbody>
-                  </table>
+                  requests.map((request) => (
+                      <article key={request.id}>
+                          {request.Rental && (
+                              <>
+                                  <h2>{request.Rental.name}</h2>
+                                  <p>{request.User.firstname}</p>
+                                  <p>{request.User.lastname}</p>
+                                  <p>{`${request.Rental.amount} euros`}</p>
+                                  <p>{`Paiement en ${request.Rental.paymentMethod} fois`}</p>
+                                  <p>{`Chèque N° ${request.Rental.checkNumber}`}</p>
+                              </>
+                          )}
+                          {request.Leisure && (
+                              <>
+                                  <h2>{request.Leisure.name}</h2>
+                                  <p>{request.User.firstname}</p>
+                                  <p>{request.User.lastname}</p>
+                                  <p>{request.Leisure.activity}</p>
+                                  <p>{`Chèque N° ${request.Leisure.checkNumber}`}</p>
+                              </>
+                          )}
+                          {request.HolidaysVoucher && (
+                              <>
+                                  <h2>{request.HolidaysVoucher.name}</h2>
+                                  <p>{request.User.firstname}</p>
+                                  <p>{request.User.lastname}</p>
+                                  <p>{`${request.HolidaysVoucher.amount} euros`}</p>
+                                  <p>{`Paiement en ${request.HolidaysVoucher.paymentMethod} fois`}</p>
+                                  <p>{`Chèque N° ${request.HolidaysVoucher.checkNumber}`}</p>
+                              </>
+                          )}
+                          <p>{request.status}</p>
+                          {decodedToken.data.role !== 2 && (
+                              <button onClick={(event) => handleDeleteRequest(event, request.id)}>Supprimer</button>
+                          )}
+                      </article>
+                  ))
               ) : (
-                  <p>En cours de chargement</p>
+                  <p>En attente de chargement</p>
               )}
-        </>
-    ) 
+          
+      </>
+  );
 }
 
-export default AdminRequestsPage;
+  export default AdminRequestsPage;

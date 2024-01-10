@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import Footer from "../../component/guest/Footer";
 import Header from "../../component/guest/Header";
 
@@ -27,7 +28,7 @@ const LeisurePage = () => {
                 <li>Formulaire de demande de participation</li>
                 <li>Facture acquittée au nom du salarié</li>
             </ul>
-            <button>Demander un remboursement Loisirs</button>
+            <Link to={`/leisurecreatepage`}><button>Demander un remboursement Loisirs</button></Link>
             </section>
         </main>
         <Footer />
