@@ -9,7 +9,7 @@ const LeisurePage = () => {
     <main>
     <section className="section">
             <div className="img-container">
-            <img className="socialActivity-img" src="images/sport.png" alt="" />
+            <img className="socialActivity-img" src="assets/images/sport.png" alt="" />
             </div>
             <h1>Loisirs famille</h1>
             <p>Le CSE participe aux loisirs du salarié et de sa famille pour un forfait maximal de 100 euros par an et par famille OU 150 euros pour un séjour au parc d'attraction.</p>

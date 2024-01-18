@@ -5,6 +5,7 @@
 
 header{
     background-color: #001682;
+    // padding: 5px;
 }
 
 .navbar_ul{
@@ -13,20 +14,30 @@ header{
     list-style-type: none;
     justify-content: flex-end;
     align-items: center; 
+
+    li:nth-child(2) {
+        margin-left: auto;
+    }
    
 }
 
-.logo {
-    margin-right: auto;
-    padding-left: 60px;
-    
-}
-
 img {
-  width: 15%;
+    min-height: 50px;
+  min-width: 150px;
 }
 
 .menu-link {
+    margin-right:40px;
+    color: white;
+    margin-top:30px;
+    white-space: nowrap;
+    padding-bottom: 25px;
+    size: 2rem;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.inactive-link {
     margin-right:70px;
     color: white;
     margin-top:30px;
@@ -41,23 +52,40 @@ a:hover {
     color: #94c11E;
 }
 
-.menu-with-submenu:hover .sub-menu {
-    display: block;
+
+@media (min-width: 768px) and (max-width: 1024px) {
+    header {
+        padding: 15px;
+    }
+
+    img {
+        width: 60px;
+      }
+
+    .logo {
+    padding-left: 30px;
+    }
 }
 
-.sub-menu {
-    display: none;
-    position: absolute;
-    list-style: none;
-    color: white;
-    box-shadow: 0 0 6px rgba(0, 0, 0, 0.1); 
-    z-index: 1; 
+@media (max-width: 426px) {
+    .menu-link {
+        margin-right: 10px;
+    }
+
+    img {
+        width:40px;
+    }
+
+    header{
+        padding: 10px;
+    }
+    
 }
 
-.sub-menu li {
-    padding: 10px;
-    background-color: #001682;
-}
+
+
+
+
 
 
 

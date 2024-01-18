@@ -1,18 +1,9 @@
 import HeaderAdmin from "../../component/admin/HeaderAdmin";
-import { useNavigate } from "react-router-dom";
-import { useEffect } from "react";
+import { UseVerifyIfUserIsLogged } from "../../utils/security-utils";
 
 
 const DashboardPage = () => {
-    const navigate = useNavigate();
-
-  useEffect(() => {
-    const token = localStorage.getItem("jwt");
-
-    if (!token) {
-      navigate("/login");
-    }
-  });
+  UseVerifyIfUserIsLogged ();
  
     return (
         <HeaderAdmin />

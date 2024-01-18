@@ -1,0 +1,37 @@
+* {
+    padding:0;
+    margin:0
+}
+
+.social_activities_main {
+    display: flex;
+    justify-content: center;
+    height: 140vh;
+    background-image:url('../../../public/assets/images/backgroundImage.jpg');
+    background-size: cover;
+}
+
+h1 {
+    color: #E87461;
+    font-size: 1.8rem;
+    text-transform: uppercase;
+    text-align: center;
+    padding-bottom: 10px;
+}
+
+h2 {
+    margin-top: 20px;
+    color: #1251A0;
+    padding-bottom: 15px;
+}
+    
+.social_activities_section {
+    margin-top: 80px;
+    background: rgba(255, 255, 255, 0.6);
+    padding: 2.5rem;
+    width: 70%;
+    height: 120vh;
+    border-radius: 20px;
+    box-shadow: 20px 20px 40px -6px rgba(0, 0, 0, .2);
+    text-align: center; 
+}

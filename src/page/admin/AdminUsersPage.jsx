@@ -1,18 +1,10 @@
 import HeaderAdmin from "../../component/admin/HeaderAdmin";
 import React, { useEffect, useState } from "react";
 import { jwtDecode } from "jwt-decode";
-import { useNavigate } from "react-router-dom";
+import { UseVerifyIfUserIsLogged } from "../../utils/security-utils";
 
 const AdminUsersPage = () => {
-    const navigate = useNavigate();
-
-  useEffect(() => {
-    const token = localStorage.getItem("jwt");
-
-    if (!token) {
-      navigate("/login");
-    }
-  });
+  UseVerifyIfUserIsLogged();
 
     const [users, setUsers] = useState(null);
     const token = localStorage.getItem("jwt");

@@ -11,7 +11,7 @@ const ContactPage = () => {
             <section>
               <h1 className="contact_title">Contactez-nous</h1>
               <div className="container-img">
-                <img className="homepage-img" src="images/contact.png" alt="" />
+                <img className="homepage-img" src="assets/images/contact.png" alt="" />
               </div>
             </section>
             <section>

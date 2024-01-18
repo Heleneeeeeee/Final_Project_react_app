@@ -1,11 +1,12 @@
-import "./LoginPage.scss";
+import "./HomePage.scss";
 import Header from "../../component/guest/Header";
 import Footer from "../../component/guest/Footer";
 import { Link, useNavigate } from "react-router-dom";
 import { useState } from "react";
+import { jwtDecode } from "jwt-decode";
 
 const LoginPage = () => {
-    const [message,setmessage] = useState(null)
+    const [message,setMessage] = useState(null)
 
     const navigate = useNavigate();
 
@@ -17,15 +18,13 @@ const LoginPage = () => {
 
     console.log(username, password)
 
-  
-
 // Je déclare une variable afin de créer un objet contenant username et password
   const loginData = {
     username,
     password,
   };
 
-// Je décalre une autre variable afin de convertir mon objet en JSON
+// Je déclare une autre variable afin de convertir mon objet en JSON
   const loginDataJson= JSON.stringify(loginData)
 
 // Je fais un fetch POST sur mon API login de mon objet JSON
@@ -45,14 +44,23 @@ const LoginPage = () => {
   if(token) {
 // je le stocke fans le local storage
     localStorage.setItem("jwt", token);
-    
-    setmessage("Vous êtes bien connecté")
-    navigate("/contact");
-  }else{ 
-    setmessage("Erreur lors de la connexion")
 
+    const decodedToken = jwtDecode(token);
+
+    console.log(decodedToken);
+
+    if (decodedToken.role === 1) {
+      setMessage("Vous êtes bien connecté en tant qu'admin");
+      navigate("/admin");
+  } else {
+      setMessage("Vous êtes bien connecté");
+      navigate("/socialactivities");
+  }
+  } else {
+  setMessage("Erreur lors de la connexion");
   }
 };
+
     return(
         <>
         <Header />
@@ -60,7 +68,7 @@ const LoginPage = () => {
             <section>
                 <h1 className="loginpage_title">Bienvenue <br /> CSE FOJL </h1>
                 <div className="container-img">
-                    <img className="loginpage-img" src="images/talkingPeople.png" alt="" />
+                    <img className="loginpage-img" src="assets/images/talkingPeople.png" alt="" />
                 </div>
             </section>
             <section> 

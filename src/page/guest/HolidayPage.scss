@@ -6,8 +6,8 @@
 main {
     display: flex;
     justify-content: center;
-    height: 200vh;
-    background-image:url('../../../public/images/backgroundImage.jpg');
+    padding-bottom: 100px;
+    background-image:url('../../../public/assets/images/backgroundImage.jpg');
     background-size: cover;
 }
 
@@ -21,7 +21,7 @@ h1 {
 
 h2 {
     margin-top: 20px;
-    color: #BCB6FF;
+    color: #1251A0;
     padding-bottom: 15px;
 }
     
@@ -30,7 +30,7 @@ h2 {
     background: rgba(255, 255, 255, 0.6);
     padding: 2.5rem;
     width: 70%;
-    height: 160vh;
+    height: fit-content;
     border-radius: 20px;
     box-shadow: 20px 20px 40px -6px rgba(0, 0, 0, .2);
     text-align: center; 
@@ -94,3 +94,5 @@ li {
     cursor: pointer;
     margin-top: 20px;
   }
+
+  

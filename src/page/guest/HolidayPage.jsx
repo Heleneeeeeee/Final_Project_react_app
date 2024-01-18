@@ -3,7 +3,6 @@ import Footer from "../../component/guest/Footer";
 import { Link } from "react-router-dom";
 import "../guest/HolidayPage.scss"
 
-
 const HolidayPage = () => {
     return(
     <>
@@ -11,7 +10,7 @@ const HolidayPage = () => {
     <main>
         <section className="section">
             <div className="img-container">
-            <img className="socialActivity-img" src="images/holiday.png" alt="" />
+            <img className="socialActivity-img" src="assets/images/holiday.png" alt="" />
             </div>
             <h1>Chèques Vacances </h1>
                 <p>Le CSE propose des Chèques Vacances pour un montant maximum de 300 euros annuel, avec une participation variant en fonction de vos salaires bruts (cf tableau d'attribution des aides), en coupure de 10, 20 et 25 euros.</p>
@@ -41,7 +40,7 @@ const HolidayPage = () => {
                     </ul>
                 </p>
             <h2>Tableau de participation du Conseil Social et Économique</h2>
-                <div >
+                <div className="table-container">
                     <table className="table">
                     <tr className="">
                         <th>Revenu brut par mois</th>

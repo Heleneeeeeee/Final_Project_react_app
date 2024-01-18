@@ -1,18 +1,11 @@
 import HeaderAdmin from "../../component/admin/HeaderAdmin";
 import React, { useEffect, useState } from "react";
 import { jwtDecode } from "jwt-decode";
-import { useNavigate } from "react-router-dom";
+import { UseVerifyIfUserIsLogged } from "../../utils/security-utils";
+import { Link } from "react-router-dom";
 
 const AdminRequestsPage = () => {
-    const navigate = useNavigate();
-
-  useEffect(() => {
-    const token = localStorage.getItem("jwt");
-
-    if (!token) {
-      navigate("/login");
-    }
-  });
+  UseVerifyIfUserIsLogged();
 
     const [requests, setRequests] = useState(null);
     const token = localStorage.getItem("jwt");
@@ -74,9 +67,8 @@ const AdminRequestsPage = () => {
                               </>
                           )}
                           <p>{request.status}</p>
-                          {decodedToken.data.role !== 2 && (
                               <button onClick={(event) => handleDeleteRequest(event, request.id)}>Supprimer</button>
-                          )}
+                              <Link to={`/admin/requests/update/${request.id}`} ><button >Modifier</button></Link>
                       </article>
                   ))
               ) : (

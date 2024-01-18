@@ -9,13 +9,13 @@ const RentalPage = () => {
         <main>
             <section className="section">
                 <div className="img-container">
-                <img className="socialActivity-img" src="images/rental.png" alt="" />
+                <img className="socialActivity-img" src="assets/images/rental.png" alt="" />
                 </div>
         <h1>Location basse saison</h1>
             <p>Le CSE propose la location de mobil-home ou chalet, en camping, sur les mois d'Avril, Mai, Juin et Septembre.</p>
             
             <h2>Comment bénéficier de la location ?</h2>
-                <p>Le salarié commande auprès du CSE un chèque LIBERTEO. Une fois en possession de ce chèque, il pourra rentrer en contact avec l'organisme Vagues Océane auprès duquel il réservera la location de son choix, parmi 40 campings, via le site www.vagues-oceanes.com</p>
+                <p>Le salarié commande auprès du CSE un chèque LIBERTEO. Une fois en possession de ce chèque, il pourra rentrer en contact avec l'organisme Vagues Océane auprès duquel il réservera la location de son choix, parmi 40 campings, via le site <a className="internet-link" href="https://www.vagues-oceanes.com/" target="_blank" rel="noopener noreferrer">www.vagues-oceanes.com </a></p>
                 <p>Une fois votre réservation effectuée, vous disposerez de 8 jours pour envoyer votre chèque en paiement de la location et ainsi bloquer la réservation.</p>
                 <p>Une fois cela fait, vous recevrez de la part de Vagues Océanes un bon de séjour confirmant votre réservation.</p>
             
@@ -58,7 +58,7 @@ const RentalPage = () => {
                     </tr>
                 </table>
             </div>
-            <Link to={`/holidaycreatepage`}><button>Envoyer une demande</button></Link>
+            <Link to={`/request`}><button>Envoyer une demande</button></Link>
             </section>
             </main>
             <Footer />
