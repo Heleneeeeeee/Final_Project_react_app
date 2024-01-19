@@ -1,11 +1,6 @@
-* {
-    padding:0;
-    margin:0
-}
-
 header{
     background-color: #001682;
-    // padding: 5px;
+    padding: 5px;
 }
 
 .navbar_ul{
@@ -17,13 +12,11 @@ header{
 
     li:nth-child(2) {
         margin-left: auto;
-    }
-   
+    }  
 }
 
-img {
-    min-height: 50px;
-  min-width: 150px;
+.logo{
+width: 160px;
 }
 
 .menu-link {
@@ -81,11 +74,3 @@ a:hover {
     }
     
 }
-
-
-
-
-
-
-
-

@@ -25,9 +25,9 @@ const SocialActivities = () => {
                 </ul>
                 <h2>Les activités sociales proposées</h2>
                 <ul>
-                    <li><Link className="menu-link" to="/holiday">Chèques Vacances</Link></li>
-                    <li><Link className="menu-link" to="/leisure">Loisirs famille</Link></li>
-                    <li><Link className="menu-link" to="/rental">Location basse saison</Link></li>
+                    <li><Link className="socialactivitieslink" to="/holiday">Chèques Vacances</Link></li>
+                    <li><Link className="socialactivitieslink" to="/leisure">Loisirs famille</Link></li>
+                    <li><Link className="socialactivitieslink" to="/rental">Location basse saison</Link></li>
                 </ul>
                 </div>
             </section>
