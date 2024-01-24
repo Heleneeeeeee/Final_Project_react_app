@@ -6,7 +6,7 @@ const LeisurePage = () => {
     return(
         <>
     <Header />
-    <main>
+    <main className="background_main">
     <section className="section">
             <div className="img-container">
             <img className="socialActivity-img" src="assets/images/sport.png" alt="" />
@@ -28,7 +28,7 @@ const LeisurePage = () => {
                 <li>Formulaire de demande de participation</li>
                 <li>Facture acquittée au nom du salarié</li>
             </ul>
-            <Link to={`/leisurecreatepage`}><button>Demander un remboursement Loisirs</button></Link>
+            <Link to={`/request`}><button>Demander un remboursement Loisirs</button></Link>
             </section>
         </main>
         <Footer />

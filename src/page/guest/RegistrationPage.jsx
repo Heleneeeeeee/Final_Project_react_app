@@ -84,7 +84,7 @@ const RegistrationPage = () => {
                     <div className="row">
                         <div className="col">
                             <label for="email"></label>  
-                            <input className="registration-input" type="text" name="email"  placeholder= "Email" /> 
+                            <input className="registration-input" type="email" name="email"  placeholder= "Email" /> 
                         </div>
                         <div className="col">
                             <label for="password"></label>

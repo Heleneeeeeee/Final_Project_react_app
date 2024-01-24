@@ -3,103 +3,80 @@ import { useParams } from "react-router-dom";
 import HeaderAdmin from "../../component/admin/HeaderAdmin";
 import { UseVerifyIfUserIsLogged } from "../../utils/security-utils";
 
+
+
 const AdminRequestUpdate = () => {
   UseVerifyIfUserIsLogged();
-
-  const { id } = useParams();
+  const { requestId } = useParams();
+  const [newStatus, setNewStatus] = useState('');
+  const [message, setMessage] = useState('');
   const [request, setRequest] = useState(null);
-  const [message, setMessage] = useState(null);
 
-  useEffect(() => {
-    const fetchData = async () => {
-      const requestResponse = await fetch(`http://localhost:3000/api/requests/${id}`);
-      const requestResponseData = await requestResponse.json();
-      setRequest(requestResponseData.data);
-    };
+  // useEffect(() => {
+  //   const fetchData = async () => {
+  //     try {
+  //       const requestResponse = await fetch(`http://localhost:3000/api/requests/${requestId}`);
+  //       if (!requestResponse.ok) {
+  //         throw new Error(`Erreur HTTP ${requestResponse.status}`);
+  //       }
+  //       const requestResponseData = await requestResponse.json();
+  //       setRequest(requestResponseData);
+  //       console.log(requestResponseData);
+  //     } catch (error) {
+  //       console.error("Erreur lors de la récupération des données :", error.message);
+  //     }
+  //   };
+  //   fetchData();
+  // }, [requestId]);
 
-    fetchData();
-  }, [id]);
+  const handleStatusChange = (event) => {
+    setNewStatus(event.target.value);
+  };
 
-  const handleUpdateRequest = async (event) => {
-    event.preventDefault();
+  const handleUpdateRequest = async () => {
+    try {
+      const response = await fetch(`http://localhost:3000/api/requests/${requestId}`, {
+        method: 'PUT',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ status: newStatus }),
+        
+      });
+      console.log(newStatus)
 
-    const updateData = {
-      checkNumber: event.target.checkNumber.value,
-      status: event.target.status ? event.target.status.value : null,
-    };
-
-    const updateDataJson = JSON.stringify(updateData);
-    const token = localStorage.getItem("jwt");
-
-    let updateResponse;
-    switch (request.type) {
-      case "chequesVacances":
-        updateResponse = await fetch(`http://localhost:3005/api/holidays/${id}`, {
-          method: "PUT",
-          headers: {
-            "Content-Type": "application/json",
-            Authorization: "Bearer " + token,
-          },
-          body: updateDataJson,
-        });
-        break;
-      case "location":
-        updateResponse = await fetch(`http://localhost:3005/api/rentals/${id}`, {
-          method: "PUT",
-          headers: {
-            "Content-Type": "application/json",
-            Authorization: "Bearer " + token,
-          },
-          body: updateDataJson,
-        });
-        break;
-      case "loisirs":
-        updateResponse = await fetch(`http://localhost:3005/api/leisures/${id}`, {
-          method: "PUT",
-          headers: {
-            "Content-Type": "application/json",
-            Authorization: "Bearer " + token,
-          },
-          body: updateDataJson,
-        });
-        break;
-      default:
-        // Gérer un cas par défaut ou une erreur
-        break;
-    }
-
-    if (updateResponse && updateResponse.status === 200) {
-      setMessage("La demande a bien été modifiée");
-    } else {
-      setMessage("Erreur !");
+      if (response.ok) {
+        const responseData = await response.json();
+        setMessage('La demande a été mise à jour avec succès.');
+        setRequest(responseData.data)
+      } else {
+        setMessage('Erreur lors de la mise à jour de la demande.');
+      }
+    } catch (error) {
+      console.error('Erreur lors de la mise à jour de la demande :', error.message);
+      setMessage('Erreur lors de la mise à jour de la demande.');
+    
     }
   };
 
   return (
+    <>
+    <HeaderAdmin />
     <div>
-      <HeaderAdmin />
-      {message && <p>{message}</p>}
-      {request && (
-        <form onSubmit={handleUpdateRequest}>
-          <div>
-            <label>
-              Numéro de chèque
-              <input type="number" name="checkNumber" defaultValue={0} />
-            </label>
-          </div>
-          {request.type !== "Request" && (
-            <div>
-              <label>
-                Statut de la demande
-                <input type="text" name="status" defaultValue={"en cours"} />
-              </label>
-            </div>
-          )}
-          <input type="submit" />
-        </form>
-      )}
+      {/* Affichez les détails de la demande actuelle */}
+      <p>{message}</p>
+      <label>Nouveau statut :</label>
+<select value={newStatus} onChange={handleStatusChange}>
+  <option value="En attente">En attente</option>
+  <option value="Approuvé">Approuvé</option>
+  <option value="Rejeté">Rejeté</option>
+</select>
+<button onClick={handleUpdateRequest}>Mettre à jour la demande</button>
     </div>
+    </>
   );
 };
 
 export default AdminRequestUpdate;
+
+

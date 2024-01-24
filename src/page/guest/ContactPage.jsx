@@ -9,24 +9,21 @@ const ContactPage = () => {
           <Header />
           <main className="homepage">
             <section>
-              <h1 className="contact_title">Contactez-nous</h1>
               <div className="container-img">
-                <img className="homepage-img" src="assets/images/contact.png" alt="" />
+                <img className="homepage-img" src="src\assets\img\images\contact.png" alt="" />
               </div>
             </section>
-            <section>
-              <form className="contact" action="" method="">
-                <label for="name">Nom:</label>
-                <input className="contact-input" type="text" id="name" name="name" required />
-    
-                <label for="email">Email:</label>
-                <input  className="contact-input" type="email" id="email" name="email" required />
-    
-                <label for="message">Message:</label>
-                <textarea  id="message" name="message" style={{ height: '500px' }} required></textarea>
-    
-                <input className="button" type="submit" value="envoyer" />
-              </form>
+            <section className="contact">
+              <h2>Contact CSE FOJL</h2>
+              <div>
+                  <p>Mail:</p>
+                  <p>cse.jennylepreux@adgessa.fr</p>
+              </div>
+              <div className="contactAdress">
+                  <p>Adresse :</p>
+                  <p>155 Avenue Aristide Briand</p>
+                  <p>33700 Mérignac </p>
+              </div>
             </section>
           </main>
           <Footer />

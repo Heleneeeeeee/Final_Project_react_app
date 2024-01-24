@@ -1,27 +1,35 @@
-* {
-    padding:0;
-    margin:0
-}
+@import '../../sass/abstracts/variables';
+@import '../../sass/abstracts/mixins';
 
 .social_activities_main {
-    display: flex;
-    justify-content: center;
-    height: 140vh;
-    background-image:url('../../../public/assets/images/backgroundImage.jpg');
-    background-size: cover;
+    @include background-page(190vh)
 }
 
-h1 {
-    color: #E87461;
-    font-size: 1.8rem;
-    text-transform: uppercase;
-    text-align: center;
-    padding-bottom: 10px;
-}
-
-h2 {
+.social_activities_list {
+    margin-bottom: 54px;
     margin-top: 20px;
-    color: #1251A0;
-    padding-bottom: 15px;
 }
-    
+
+.social_activities_link {
+    color: $white-color;
+    text-decoration: none;
+    background-color: $blue-color;
+    padding: 10px;
+    border-radius: 20px;
+    border: solid 3px $white-color;
+}
+
+.social_activities_link:hover {
+    border: solid 3px $apple-green-color;
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+    .section {
+        margin-top: 5px;
+      }
+}
+@media (max-width: 426px) {
+    .section {
+      margin-top: -38px;
+    }
+  }

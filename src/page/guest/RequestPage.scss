@@ -1,4 +1,16 @@
-* {
-    padding:0;
-    margin:0
+@import '../../sass/abstracts/mixins';
+
+.formPage_main {
+    @include background-page(85vh)
+}
+
+.form-section {
+    background: rgba(255, 255, 255, 0.6);
+    padding: 2.5rem;
+    width: 50%;
+    height: 40vh;
+    border-radius: 20px;
+    box-shadow: 20px 20px 40px -6px rgba(0, 0, 0, .2);
+    text-align: center;
+    margin-top: 35px;
 }

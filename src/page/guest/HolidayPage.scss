@@ -1,98 +1,73 @@
-* {
-    padding:0;
-    margin:0
-}
+@import '../../sass/abstracts/mixins';
 
-main {
-    display: flex;
-    justify-content: center;
-    padding-bottom: 100px;
-    background-image:url('../../../public/assets/images/backgroundImage.jpg');
-    background-size: cover;
+.background_main {
+  display: flex;
+  justify-content: center;
+  padding-bottom: 100px;
+  background-image:url('../../../public/assets/images/backgroundImage.jpg');
+  background-size: cover;
 }
-
-h1 {
-    color: #E87461;
-    font-size: 1.8rem;
-    text-transform: uppercase;
-    text-align: center;
-    padding-bottom: 10px;
-}
-
-h2 {
-    margin-top: 20px;
-    color: #1251A0;
-    padding-bottom: 15px;
-}
-    
+ 
 .section {
-    margin-top: 80px;
-    background: rgba(255, 255, 255, 0.6);
-    padding: 2.5rem;
-    width: 70%;
-    height: fit-content;
-    border-radius: 20px;
-    box-shadow: 20px 20px 40px -6px rgba(0, 0, 0, .2);
-    text-align: center; 
+@include block-section(100px);
 }
 
 .img-container {
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    justify-content: center;
-    text-align: center;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
 }
 
 .socialActivity-img {
-    width: 40%; 
-    margin-bottom: 0px; 
+  width: 40%; 
+  margin-bottom: 0px; 
 }
 
 
 li {
-    list-style-type: none;
+  list-style-type: none;
 }
 
 .table-container {
-    width: 100%;
-    margin-top: 20px;
-  }
-  
-  .table {
-    width: 100%;
-    border-collapse: collapse;
-  }
-  
-  th, td {
-    padding: 12px;
-    border-bottom: 1px solid #ddd;
-  }
-  
-  th {
-    background-color: #f2f2f2;
-  }
-  
-  .line-1 {
-    background-color: #1251A0;
-  }
+  width: 100%;
+  margin-top: 20px;
+}
 
-  .line-2 {
-    background-color: #BCB6FF;
-  }
+.table {
+  width: 100%;
+  border-collapse: collapse;
+}
 
-  .line-3 {
-    background-color: #B8E1FF;
-  }
+th, td {
+  padding: 12px;
+  border-bottom: 1px solid #ddd;
+}
 
-  button {
-    background-color: #94c11E;
-    color: white;
-    padding: 8px 12px;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    margin-top: 20px;
-  }
+th {
+  background-color: #f2f2f2;
+}
 
-  
+.line-1 {
+  background-color: #1251A0;
+}
+
+.line-2 {
+  background-color: #BCB6FF;
+}
+
+.line-3 {
+  background-color: #B8E1FF;
+}
+
+.button {
+  background-color: #94c11E;
+  color: white;
+  padding: 8px 12px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-top: 20px;
+}
+

@@ -66,7 +66,7 @@ const LoginPage = () => {
         <Header />
         <main className="loginpage">
             <section>
-                <h1 className="loginpage_title">Bienvenue <br /> CSE FOJL </h1>
+                <h1 className="loginpage_title">Bienvenue</h1><p className="loginpage_title">CSE FOJL</p>
                 <div className="container-img">
                     <img className="loginpage-img" src="assets/images/talkingPeople.png" alt="" />
                 </div>

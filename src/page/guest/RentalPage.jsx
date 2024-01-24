@@ -6,7 +6,7 @@ const RentalPage = () => {
     return (
         <>
         <Header />
-        <main>
+        <main className="background_main">
             <section className="section">
                 <div className="img-container">
                 <img className="socialActivity-img" src="assets/images/rental.png" alt="" />

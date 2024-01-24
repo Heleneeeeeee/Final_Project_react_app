@@ -2,6 +2,7 @@ import { useState } from "react";
 import { UseVerifyIfUserIsLogged } from "../../utils/security-utils";
 import "./RequestPage.scss";
 import Header from "../../component/guest/Header";
+import Footer from "../../component/guest/Footer";
 
 const RequestPage = () => {
     UseVerifyIfUserIsLogged();
@@ -133,52 +134,56 @@ const RequestPage = () => {
     return (
         <>
             <Header />
-            <div>
-                {message && <p>{message}</p>}
-                <form onSubmit={handleSubmit}>
-                    <p>Sélectionnez votre demande:</p>
-                    <select required name="name" onChange={(event) => onChangeHandler(event)}>
-                        <option defaultValue="">--Choisisez une option--</option>
-                        <option value="chequesVacances">Chèques Vacances</option>
-                        <option value="location">Location</option>
-                        <option value="loisirs">Loisirs</option>
-                    </select>
-                    {selection==="loisirs" ? (
-                        <>
-                            <div>
-                                <label htmlFor="activity">Activité:</label>
-                                <input type="text"  name="activity" />
-                            </div>
-                            <div>
-                                <label htmlFor="beneficiary">Bénéficiaire:</label>
-                                <input type="text" name="beneficiary" />
-                            </div>
-                            <div>
-                            <label htmlFor="image">Image:</label>
-                            <input type="file"  name="image" />
-                            </div>
-                        </>
-                    ) : (
-                        <>
-                            <div>
-                                <label>Paiement en :
-                                    <select id="choix" name="paymentMethod">
-                                        <option value="1">1 fois</option>
-                                        <option value="2">2 fois</option>
-                                    </select>
-                                </label>
-                            </div>
-                            <div>
-                                <label>
-                                    Montant
-                                    <input type="number" name="amount" />
-                                </label>
-                            </div>
-                        </>
-                    )}
-                    <button type="submit">Submit</button>
-                </form>
-            </div>
+            <main className="formPage_main">
+                <section className="form-section">
+                    <h1>Formulaire de demande</h1>
+                    {message && <p>{message}</p>}
+                    <form onSubmit={handleSubmit}>
+                        <p>Sélectionnez votre demande:</p>
+                        <select required name="name" onChange={(event) => onChangeHandler(event)}>
+                            <option defaultValue="">--Choisisez une option--</option>
+                            <option value="chequesVacances">Chèques Vacances</option>
+                            <option value="location">Location</option>
+                            <option value="loisirs">Loisirs</option>
+                        </select>
+                        {selection==="loisirs" ? (
+                            <>
+                                <div>
+                                    <label htmlFor="activity">Activité:</label>
+                                    <input type="text"  name="activity" />
+                                </div>
+                                <div>
+                                    <label htmlFor="beneficiary">Bénéficiaire:</label>
+                                    <input type="text" name="beneficiary" />
+                                </div>
+                                <div>
+                                <label htmlFor="image">Image:</label>
+                                <input type="file"  name="image" />
+                                </div>
+                            </>
+                        ) : (
+                            <>
+                                <div>
+                                    <label><div>Paiement en : </div>
+                                        <select id="choix" name="paymentMethod">
+                                            <option value="1">1 fois</option>
+                                            <option value="2">2 fois</option>
+                                        </select>
+                                    </label>
+                                </div>
+                                <div>
+                                    <label>
+                                        <div>Montant</div> 
+                                        <input type="number" name="amount" />
+                                    </label>
+                                </div>
+                            </>
+                        )}
+                        <button type="submit">Submit</button>
+                    </form>
+                </section>
+            </main>
+            <Footer />
         </>
     );
 };

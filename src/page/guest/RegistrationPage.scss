@@ -1,13 +1,9 @@
-* {
-    padding:0;
-    margin:0
-}
 
 .registrationpage {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 89vh;
+    height: 80h;
     background-image:url('../../../public/assets/images/backgroundImage.jpg');
     background-size: cover;
 }
@@ -16,11 +12,11 @@
     background: rgba(255, 255, 255, 0.6);
     padding: 2.5rem;
     width: 70%;
-    height: 55vh;
+    height: 57vh;
     border-radius: 20px;
     box-shadow: 20px 20px 40px -6px rgba(0, 0, 0, .2);
     text-align: center;
-    font-family: FontAwesome;
+    margin-top: 35px;
 }
 
 .row {
@@ -52,5 +48,4 @@
     border-radius: 50px;
     cursor: pointer;
 }
-
 

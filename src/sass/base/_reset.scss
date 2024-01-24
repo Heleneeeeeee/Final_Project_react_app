@@ -1,0 +1,24 @@
+@import '../abstracts/typographie';
+@import '../abstracts/variables';
+
+*{
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-family: 'poppins';
+}
+
+h1 {
+    color:$orange-pink-color;
+    font-size: 1.8rem;
+    text-transform: uppercase;
+    text-align: center;
+    padding-top: 20px;
+}
+
+h2 {
+    margin-top: 20px;
+    color:$blue-color;
+    padding-bottom: 15px;
+}
+    

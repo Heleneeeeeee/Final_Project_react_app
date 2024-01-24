@@ -1,62 +1,89 @@
 header{
     background-color: #001682;
-    padding: 5px;
 }
 
-.navbar_ul{
-    display: flex;
-    flex-direction: row;
-    list-style-type: none;
-    justify-content: flex-end;
-    align-items: center; 
+.navbar{
+ height: 15vh;
+ width: 100vw;
+ display: flex;
+ justify-content: space-around;
+ align-items: center;
 
-    li:nth-child(2) {
-        margin-left: auto;
-    }  
+}
+.navbar_ul{
+    height: 10vh;
+    width: 70%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
 }
 
 .logo{
-width: 160px;
+width: 100px;
 }
-
+.logout_btn{
+    padding: 8px;
+    font-size: 2vh;
+    background-color: #94c11E;
+    border-radius: 20px;
+    cursor: pointer;
+}
 .menu-link {
-    margin-right:40px;
+    position: relative;
     color: white;
-    margin-top:30px;
     white-space: nowrap;
-    padding-bottom: 25px;
-    size: 2rem;
     font-weight: bold;
     text-decoration: none;
+    font-size: 2vh;
+    cursor: pointer;
+    transition: all .3s ease;
 }
-
-.inactive-link {
-    margin-right:70px;
-    color: white;
-    margin-top:30px;
-    white-space: nowrap;
-    padding-bottom: 25px;
-    size: 2rem;
-    font-weight: bold;
-    text-decoration: none;
-}
-
-a:hover {
+.menu-link:hover{
     color: #94c11E;
 }
 
+.inactive-link {
+    color: white;
+    white-space: nowrap;
+    font-weight: bold;
+    text-decoration: none;
+}
+.div-profile-info{
+    position: absolute;
+    top: 15vh;
+    right: 35vh;
+    height: 15vh;
+    width: 200px;
+    display: none;
+    align-items: center;
+    justify-content: space-around;
+    background-color: #001682;
+    .div-display{
+        width: 50%;
+        height: 100%;
+        color: white;
+        text-decoration: none;
+        font-size: smaller;
+        cursor: pointer;
+        transition: all .3s ease;
+
+    }
+    .div-display:hover{
+        color: #94c11E;
+    }
+}
 
 @media (min-width: 768px) and (max-width: 1024px) {
-    header {
-        padding: 15px;
-    }
 
-    img {
-        width: 60px;
-      }
 
     .logo {
     padding-left: 30px;
+    width: 113px;
+    }
+
+    button {
+        padding: 3px 10px;
+        margin-top: 10px;
     }
 }
 
@@ -65,8 +92,8 @@ a:hover {
         margin-right: 10px;
     }
 
-    img {
-        width:40px;
+    .logo {
+        width:114px;
     }
 
     header{

@@ -7,10 +7,10 @@ const HolidayPage = () => {
     return(
     <>
     <Header />
-    <main>
+    <main className="background_main">
         <section className="section">
             <div className="img-container">
-            <img className="socialActivity-img" src="assets/images/holiday.png" alt="" />
+            <img className="socialActivity-img" src="src\assets\img\images\holiday.png" alt="" />
             </div>
             <h1>Chèques Vacances </h1>
                 <p>Le CSE propose des Chèques Vacances pour un montant maximum de 300 euros annuel, avec une participation variant en fonction de vos salaires bruts (cf tableau d'attribution des aides), en coupure de 10, 20 et 25 euros.</p>
@@ -63,7 +63,7 @@ const HolidayPage = () => {
                         <td className="line-3">75%</td>
                     </tr>
                 </table>
-                <Link to={`/holidaycreatepage`}><button>Envoyer une demande</button></Link>
+                <Link to={`/request`}><button>Envoyer une demande</button></Link>
                 </div>
             </section>
         </main>

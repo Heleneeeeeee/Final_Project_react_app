@@ -1,24 +1,21 @@
-* {
-    padding:0;
-    margin:0
-}
+@import '../../sass/base/reset';
 
 .loginpage {
     display: flex;
     justify-content: space-around;
     align-items: center;
-    height: 87vh;
     background-image:url('../../../public/assets/images/backgroundImage.jpg');
     background-size: cover;
+    height: 87vh;
+    padding: 5px;
 }
 
 .loginpage_title {
-    padding-left: 200px;
-    padding-top: 35px;
     color: white;
     font-size: 4rem;
     text-transform: uppercase;
     text-align: center;
+    font-weight: bold;
 }
 .container-img{
     width: 450px;
@@ -29,6 +26,7 @@
 .loginpage-img {
     width:100%;
     height:auto;
+    margin-top: -10vh;
 }
 
 .login {
@@ -39,6 +37,7 @@
     border-radius: 20px;
     box-shadow: 20px 20px 40px -6px rgba(0, 0, 0, .2);
     text-align: center;
+    margin-top: -7vh;
 }
 
 .login-input {

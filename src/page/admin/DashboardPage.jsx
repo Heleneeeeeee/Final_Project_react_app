@@ -6,7 +6,10 @@ const DashboardPage = () => {
   UseVerifyIfUserIsLogged ();
  
     return (
+      <>
         <HeaderAdmin />
+        <h1>Vous êtes bien sur le Dashboard Admin</h1>
+      </>
     )
 }
 

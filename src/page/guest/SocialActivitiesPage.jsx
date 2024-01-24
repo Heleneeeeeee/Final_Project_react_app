@@ -8,7 +8,7 @@ const SocialActivities = () => {
         <>
         <Header />
         <main className="social_activities_main">
-            <section className="social_activities_section">
+            <section className="section">
             <div className="img-container">
             <img className="socialActivity-img" src="assets/images/socialactivities.png" alt="" />
                 <h1>Les activités sociales</h1>
@@ -25,9 +25,9 @@ const SocialActivities = () => {
                 </ul>
                 <h2>Les activités sociales proposées</h2>
                 <ul>
-                    <li><Link className="socialactivitieslink" to="/holiday">Chèques Vacances</Link></li>
-                    <li><Link className="socialactivitieslink" to="/leisure">Loisirs famille</Link></li>
-                    <li><Link className="socialactivitieslink" to="/rental">Location basse saison</Link></li>
+                    <li className="social_activities_list"><Link className="social_activities_link" to="/holiday">Chèques Vacances</Link></li>
+                    <li className="social_activities_list"><Link className="social_activities_link"to="/leisure">Loisirs famille</Link></li>
+                    <li className="social_activities_list"><Link className="social_activities_link" to="/rental">Location basse saison</Link></li>
                 </ul>
                 </div>
             </section>

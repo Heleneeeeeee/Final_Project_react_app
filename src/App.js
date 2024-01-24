@@ -12,7 +12,9 @@ import RequestPage from './page/guest/RequestPage';
 import UserPage from './page/guest/UserPage';
 import SocialActivitiesPage from './page/guest/SocialActivitiesPage';
 import AdminRequestUpdate from './page/admin/AdminRequestUpdate';
-
+import RequestUpdatePage from './page/guest/RequestUpdatePage';
+import UserUpdatePage from './page/guest/UserUpdatePage';
+import UserRequestPage from './page/guest/UserRequestPage';
 
 function App() {
   return (
@@ -27,6 +29,10 @@ function App() {
         <Route path="/request" element={<RequestPage />} />
         <Route path="/users/:userId" element={<UserPage />} />
         <Route path="/socialactivities" element={<SocialActivitiesPage />} />
+        {/* <Route path="/requests/:id" element={<RequestUpdatePage />}/> */}
+        <Route path="/users/update/:userId" element={<UserUpdatePage />} />
+        <Route path="/users/requests/users/:userId" element={<UserRequestPage />} />
+
 
         <Route path="/admin" element={<DashboardPage />}/>
         <Route path="/admin/users" element= {<AdminUsersPage />} />
